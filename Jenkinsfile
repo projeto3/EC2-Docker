@@ -5,14 +5,7 @@ pipeline {
     agent any
 
     stages {
-         stage('Dependencias') {
-
-            steps {
-   
-    
-            }
-
-        }
+       
         stage('Build') {
 
             steps {
