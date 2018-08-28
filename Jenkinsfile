@@ -41,16 +41,6 @@ pipeline {
         
         }
 
-        stage('Test') {
-
-            steps {
-
-                echo 'Testing..'
-
-            }
-
-        }
-
         stage('Deploy') {
 
             steps {
@@ -60,6 +50,19 @@ pipeline {
             }
 
         }
+        
+         stage('Test') {
+
+            steps {
+                 //dir('projeto3/'){
+                 //sh "./teste.sh"
+                // }
+
+                 echo 'Testing..'
+
+             }
+
+         }
          stage('Confirm Deploy Prod?') {
 
             steps {
