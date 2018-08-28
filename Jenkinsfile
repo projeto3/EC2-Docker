@@ -12,7 +12,7 @@ pipeline {
    
                 git url: 'https://github.com/projeto3/EC2-Docker.git'
                 
-                echo 'Building..'
+                echo 'Building. .'
 
             }
 
