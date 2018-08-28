@@ -5,24 +5,19 @@ pipeline {
     agent any
 
     stages {
-       //  stage('Dependencias') {
-//
-         //   steps {
+         stage('Dependencias') {
+
+            steps {
    
-       //     dir('/') {
-       //             sh "sudo rm -r *"
-        //            }
-                
-       //         echo 'Destruindo build Anterior..'
+    
+            }
 
-       //     }
-
-    //    }
+        }
         stage('Build') {
 
             steps {
    
-                git url: 'https://github.com/projeto3/projeto3.git'
+                git url: 'https://github.com/projeto3/EC2-Docker.git'
                 
                 echo 'Building..'
 
