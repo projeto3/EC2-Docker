@@ -60,17 +60,33 @@ pipeline {
             }
 
         }
-                stage('Destroy') {
+         stage('Confirm Deploy Prod?') {
+
+            steps {
+           // Elvis ira analisar condição     def userInput = false
+            timeout(60) {                // timeout waiting for input after 60 minutes
+                    script {
+                        // capture the approval details in approvalMap.
+                        approvalMap = input id: 'test', message: 'Hello', ok: 'Proceed?',
+                        parameters: [choice(choices: 'Dev\nProd', description: 'Select Ambiente', name: 'Build'), string(defaultValue: '', description: '', name: 'Descrição')],  submitterParameter: 'APPROVER'
+                    }
+                }
+
+            }
+
+        }
+             stage('Destroy') {
 
             steps {
                 dir('terraform/') {
-                sh "pwd"
+                sh "sudo terraform destroy -force"
                 }
                 echo 'apagando repo....'
 
             }
 
         }
+
 
     }
 
