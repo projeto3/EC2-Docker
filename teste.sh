@@ -1,20 +1,22 @@
 #!/bin/bash
 echo "Realizando teste de conectividade..."
+
 #Verifica se a instancia AWS está UP
+
 URL="http://www.google.com"
 SERVICE_PORT=8080
 
 #Falta - Verificar como pega a URL da instancia via terraform e salvar em variavel...
-ping -qc5 $URL > /dev/null
+#ping -qc5 $URL > /dev/null
 
 echo
 
-if [ $? -eq 0 ]; then
-	echo -e "$URL: Status -> \033[0;32mONLINE\033[0m"
-else 
+if ! ping -qc2 $URL > /dev/null; then
 	echo -e "$URL: Status -> \033[0;31mOFFLINE\033[0m"
 	echo "O teste de conectividade falhou, verifique sua instancia AWS!"
 	exit
+else 
+	echo -e "$URL: Status -> \033[0;32ONLINE\033[0m"
 fi
 
 echo "Realizando teste de requisição (HTTP GET)"
