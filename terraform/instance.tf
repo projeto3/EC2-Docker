@@ -5,8 +5,9 @@ resource "aws_instance" "projeto3" {
   key_name = "projeto3"
   subnet_id     = "subnet-04ddf27ca8d47df64"
   associate_public_ip_address	= "true"
-  output "public-ip" {
-  value = "${aws_instance.ec2.public_ip}"
-}
+  
   # user_data = "${file("${path.module}/user-data.sh")}"
+}
+output "public-ip" {
+  value = "${aws_instance.ec2.public_ip}"
 }
