@@ -8,6 +8,10 @@ resource "aws_instance" "projeto3" {
   
   # user_data = "${file("${path.module}/user-data.sh")}"
 }
-output "ip" {
+output "ip_aws" {
     value = "${aws_instance.projeto3.public_ip}"
+}
+}
+output "dns_aws" {
+    value = "${aws_instance.projeto3.public_dns}"
 }
