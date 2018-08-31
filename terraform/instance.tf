@@ -8,6 +8,3 @@ resource "aws_instance" "projeto3" {
   
   # user_data = "${file("${path.module}/user-data.sh")}"
 }
-output "public-ip" {
-  value = "${aws_instance.ec2.public_ip}"
-}
