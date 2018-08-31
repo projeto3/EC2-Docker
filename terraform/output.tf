@@ -1,3 +1,3 @@
 output "public-ip" {
-  value = "${aws_eip.ip.public_ip}"
+  value = "${aws_ec2.ip.public_ip}"
 }
