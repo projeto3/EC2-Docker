@@ -5,6 +5,7 @@ resource "aws_instance" "projeto3" {
   key_name = "projeto3"
   subnet_id     = "subnet-04ddf27ca8d47df64"
   associate_public_ip_address	= "true"
+  aws_security_group = "sg-0b70b9d3a1ae3add6"
   
   # user_data = "${file("${path.module}/user-data.sh")}"
 }
