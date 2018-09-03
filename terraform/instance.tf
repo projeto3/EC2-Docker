@@ -9,7 +9,7 @@ resource "aws_instance" "projeto3" {
   associate_public_ip_address	= "true"
   #aws_security_group = "sg-0b70b9d3a1ae3add6"
   
-  # user_data = "${file("${path.module}/user-data.sh")}"
+  user_data = "${file("${path.module}/user-data.sh")}"
 }
 output "ip_aws" {
     value = "${aws_instance.projeto3.public_ip}"
