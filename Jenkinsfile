@@ -34,6 +34,7 @@ pipeline {
                         steps {
                     dir('terraform/') {
                     sh "sudo terraform apply -auto-approve"
+                    //sh "export aws_dns=$(terraform output aws_dns)" //exporta a variavel para usar no teste.sh
                     }
                     echo 'Criando Instancia..'
 
