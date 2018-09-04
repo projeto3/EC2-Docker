@@ -1,5 +1,5 @@
 #!/bin/bash
-URL="http://www.google.com"
+#URL="http://www.google.com"
 SERVICE_PORT=8080
 
 echo "Realizando teste de conectividade..."
@@ -10,24 +10,24 @@ echo "Realizando teste de conectividade..."
 
 echo
 
-if ! ping -qc2 $URL > /dev/null; then
-	echo -e "$URL: Status -> \033[0;31mOFFLINE\033[0m"
-	echo "O teste de conectividade falhou, verifique sua instancia AWS!"
+if ! ping -qc2 $dns_aws > /dev/null; then
+	echo -e "$dns_aws: Status da instancia EC2 -> \033[0;31mOFFLINE\033[0m"
+	echo "O teste de conectividade falhou, verifique sua instancia!"
 	exit
 else 
-	echo -e "$URL: Status -> \033[0;32ONLINE\033[0m"
+	echo -e "$dns_aws: Status da instancia EC2 -> \033[0;32ONLINE\033[0m"
 fi
 
 echo "Realizando teste de requisição (HTTP GET)"
 sleep 1
 #Envia uma requisição HTTP GET para o APP
 
-STATUS_CODE=$(curl --write-out %{http_code} --silent --output /dev/null $URL:$SERVICE_PORT)
+STATUS_CODE=$(curl --write-out %{http_code} --silent --output /dev/null $dns_aws:$SERVICE_PORT)
 
 #Verifica se a resposta do HTTP GET é igual a 200, caso verdadeiro a requisiço foi um sucesso.
 if [ $STATUS_CODE -eq 200 ]; then
 	echo -e "Teste de requisição....\033[0;32mOK\033[0m :: $(date +%F\ %T)"
-	echo "URL da aplicação http://$URL:$SERVICE_PORT"
+	echo "URL da aplicação http://$dns_aws:$SERVICE_PORT"
 else
 	echo -e "Teste de requisição... \033[0;31mFAIL\033[0m :: $(date +%F\ %T)"
 	echo "Teste de requisição falhou, verifique o log de deploy da aplicação!"
