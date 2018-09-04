@@ -11,10 +11,10 @@ resource "aws_instance" "projeto3" {
   
   user_data = "${file("${path.module}/user_data.sh")}"
 }
-output "ip_aws" {
+output "aws_ip" {
     value = "${aws_instance.projeto3.public_ip}"
 }
 
-output "dns_aws" {
+output "aws_dns" {
     value = "${aws_instance.projeto3.public_dns}"
 }
