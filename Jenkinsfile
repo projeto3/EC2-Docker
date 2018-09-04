@@ -6,7 +6,7 @@ pipeline {
 
     stages {
        
-        stage('Build') {
+        stage('Base de Código') {
 
             steps {
 
@@ -19,7 +19,7 @@ pipeline {
                 
                 git url: 'https://github.com/projeto3/EC2-Docker.git'
                 
-                echo 'Building. .'
+                echo 'Origem e Versão do codigo..'
 
             }
 
