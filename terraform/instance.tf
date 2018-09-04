@@ -1,6 +1,6 @@
 
 resource "aws_instance" "projeto3" {
-  ami           = "ami-6871a115"
+  ami           = "ami-04681a1dbd79675a5"
   instance_type = "t2.micro"
  #key_name = "projeto3"
   key_name = "${aws_key_pair.mykeypair.key_name}"
