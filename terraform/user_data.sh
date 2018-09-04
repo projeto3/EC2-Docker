@@ -1,4 +1,4 @@
 #!/bin/bash
 yum update -y
 yum install epel-release -y
-yum install ansible git -y
+pip install ansible
