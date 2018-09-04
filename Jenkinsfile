@@ -43,7 +43,7 @@ pipeline {
                     sh "sudo terraform apply -auto-approve"
                         //sh "pwd"
                         sh 'aws_dns=$(terraform output aws_dns)'
-                        sh 'export aws_dns'
+                        sh 'echo "$aws_dns"'
                     }
                     echo 'Criando Instancia..'
             }
