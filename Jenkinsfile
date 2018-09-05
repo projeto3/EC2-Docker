@@ -2,7 +2,7 @@
 
 pipeline {
 
-    agent any
+    agent any {
 
     stages {
        
@@ -41,9 +41,53 @@ pipeline {
             }
         
         }
+    stage('Deploy') {
+
+            steps {
+
+                echo 'Deploying....'
+
+            }
+
+        }
+        
+         stage('Test') {
+
+            steps {
+               
+                 echo 'Testing..'
+
+             }
+
+         }
+         stage('Confirm Deploy Prod?') {
+
+            steps {
+                    script {
+                        // capture the approval details in approvalMap.
+                        approvalMap = input id: 'test', message: 'Hello', ok: 'Proceed?',
+                        parameters: [choice(choices: 'Dev\nProd', description: 'Select Ambiente', name: 'Build'), string(defaultValue: '', description: '', name: 'Descrição')],  submitterParameter: 'APPROVER'
+                    
+                }
+
+            }
+
+        }
+             stage('Destroy') {
+
+            steps {
+                dir('terraform/') {
+                sh "sudo terraform destroy -force"
+                }
+                echo 'apagando repo....'
+
+            }
+
+        }
 
     
 
     }
 
+}
 }
