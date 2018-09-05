@@ -7,11 +7,19 @@ pipeline {
         stage('Base de Código') {
 
             steps {
+               sh 'echo "BUILD_DISPLAY_NAME" :: $BUILD_DISPLAY_NAME'
+               sh 'echo "NODE_LABELS" :: $NODE_LABELS'
+               sh 'echo "GIT_COMMIT" :: $GIT_COMMIT'
+               sh 'echo "BUILD_TAG" :: $BUILD_TAG'
+               sh 'echo "GIT_BRANCH" :: $GIT_BRANCH'
+               sh 'echo "GIT_AUTHOR_NAME" :: $GIT_AUTHOR_NAME'
+                
+                git url: 'https://github.com/projeto3/EC2-Docker.git'
 
                 
                 echo 'Origem e Versão do codigo..'
 
-            }
+              }
 
         }
          stage('Config') {
@@ -33,7 +41,7 @@ pipeline {
                     sh "sudo terraform apply -auto-approve"
                         //sh "pwd"
                         sh 'terraform output aws_dns > aws_dns.txt'
-                        sh 'export aws_dns=$(cat aws_dns.txt)'
+                        sh 'cat aws_dns.txt'
                     }
                     echo 'Criando Instancia..'
             }
