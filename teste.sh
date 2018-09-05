@@ -1,16 +1,11 @@
 #!/bin/bash
 #URL="http://www.google.com"
 aws_dns=$(cat terraform/aws_dns.txt)
-echo $aws_dns
-echo
 SERVICE_PORT=8080
 
 echo "Realizando teste de conectividade..."
 
 #Verifica se a instancia AWS está UP
-#Falta - Verificar como pega a URL da instancia via terraform e salvar em variavel...
-#ping -qc5 $URL > /dev/null
-
 echo
 
 if ! ping -qc2 $aws_dns > /dev/null; then
@@ -18,7 +13,7 @@ if ! ping -qc2 $aws_dns > /dev/null; then
 	echo "O teste de conectividade falhou, verifique sua instancia!"
 	exit
 else 
-	echo -e "$aws_dns: Status da instancia EC2 -> \033[0;32ONLINE\033[0m"
+	echo -e "$aws_dns: Status da instancia EC2 -> \033[0;32mONLINE\033[0m"
 fi
 
 echo "Realizando teste de requisição (HTTP GET)"
