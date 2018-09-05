@@ -60,7 +60,7 @@ pipeline {
          stage('Test') {
 
             steps {
-               
+                 sh 'pwd'
                  echo 'Testing..'
 
              }
