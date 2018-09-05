@@ -60,7 +60,8 @@ pipeline {
          stage('Test') {
 
             steps {
-                 sh 'pwd'
+                 sh 'sudo chmod +x teste.sh'
+                 sh './teste.sh'
                  echo 'Testing..'
 
              }
