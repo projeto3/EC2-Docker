@@ -1,5 +1,6 @@
 #!/bin/bash
 #URL="http://www.google.com"
+aws_dns=$(cat terraform/aws_dns.txt)
 SERVICE_PORT=8080
 
 echo "Realizando teste de conectividade..."
