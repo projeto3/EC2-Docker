@@ -2,8 +2,6 @@
 
 pipeline {
 
-    agent {
-
     stages {
        
         stage('Base de Código') {
@@ -89,5 +87,4 @@ pipeline {
 
     }
 
-}
 }
