@@ -1,7 +1,7 @@
 //Declarative Pipeline
 
 pipeline {
-
+    agent
     stages {
        
         stage('Base de Código') {
