@@ -7,6 +7,10 @@
  }
   variable "tags" {
     description = "A map of tags to add to all resources"
-    default     = {}
+    default     = {
+      name = "${$BUILD_TAG}"
+      commit = "{$GIT_COMMIT}"
+      Build = "{$BUILD_DISPLAY_NAME}"
+      
+      }
   }
-
