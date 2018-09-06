@@ -4,9 +4,11 @@ pipeline {
     agent any
     stages {
        
-        stage('Base de Código') {
-                 parallel(
-                                 Informações_da_build: {
+
+                    stage('Codigo') {
+                        steps {
+                             parallel(
+                                 Criando_VPC: {
                                            sh 'echo "BUILD_DISPLAY_NAME" :: $BUILD_DISPLAY_NAME'
                                            sh 'echo "NODE_LABELS" :: $NODE_LABELS'
                                            sh 'echo "GIT_COMMIT" :: $GIT_COMMIT'
@@ -14,15 +16,18 @@ pipeline {
                                            sh 'echo "GIT_BRANCH" :: $GIT_BRANCH'
                                            sh 'echo "GIT_AUTHOR_NAME" :: $GIT_AUTHOR_NAME'
                                     },
-                                 Copiando_codigo_git:{ 
-                                           git url: 'https://github.com/projeto3/EC2-Docker.git'
+                                    
+                                 b:{
+                       // sh "sudo terraform apply -auto-approve"
+                                     git url: 'https://github.com/projeto3/EC2-Docker.git'
 
-                                  
+                                            }
                                    }
                                      )
-                
-                echo 'Origem e Versão do git..'
-
+            }
+                              
+        
+        }
               
 
         }
