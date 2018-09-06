@@ -5,7 +5,6 @@ pipeline {
     stages {
        
         stage('Base de Código') {
-            steps {
                  parallel(
                                  Informações_da_build: {
                                            sh 'echo "BUILD_DISPLAY_NAME" :: $BUILD_DISPLAY_NAME'
@@ -24,7 +23,7 @@ pipeline {
                 
                 echo 'Origem e Versão do git..'
 
-              }
+              
 
         }
          stage('Config') {
