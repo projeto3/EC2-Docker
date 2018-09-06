@@ -24,13 +24,9 @@ pipeline {
                                             }
                                    
                                      )
-            }
-                              
-        
-        }
-              
+                        }
+                    }
 
-        }
          stage('Config') {
 
             steps {
@@ -101,6 +97,5 @@ pipeline {
 
         }
 
-    
-
-    }
+}
+}
