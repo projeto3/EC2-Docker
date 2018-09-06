@@ -5,7 +5,7 @@ LOG="/var/log/teste_aws.log"
 
 if ! [ -f "$LOG" ]
 then
-	touch $LOG
+	sudo -i touch $LOG
 fi
 
 aws_dns=$(cat terraform/aws_dns.txt)
