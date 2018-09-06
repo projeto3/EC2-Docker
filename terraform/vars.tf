@@ -7,6 +7,7 @@
  }
     variable "instance_name" {
   description = "Used to populate the Name tag. This is done in main.tf"
+      nome = "${aws_instance.projeto3.public_dns}"
 }
 
 variable "instance_type" {}
