@@ -8,7 +8,7 @@ pipeline {
                     stage('Codigo') {
                         steps {
                              parallel(
-                                 Criando_VPC: {
+                                   Informacoes_da_build: {
                                            sh 'echo "BUILD_DISPLAY_NAME" :: $BUILD_DISPLAY_NAME'
                                            sh 'echo "NODE_LABELS" :: $NODE_LABELS'
                                            sh 'echo "GIT_COMMIT" :: $GIT_COMMIT'
@@ -17,7 +17,7 @@ pipeline {
                                            sh 'echo "GIT_AUTHOR_NAME" :: $GIT_AUTHOR_NAME'
                                     },
                                     
-                                 b:{
+                                    Copiando_git:{
                        // sh "sudo terraform apply -auto-approve"
                                      git url: 'https://github.com/projeto3/EC2-Docker.git'
 
