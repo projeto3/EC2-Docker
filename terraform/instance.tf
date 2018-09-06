@@ -10,14 +10,7 @@ resource "aws_instance" "projeto3" {
   #aws_security_group = "sg-0b70b9d3a1ae3add6"
   
   user_data = "${file("${path.module}/user_data.sh")}"
-     
-        tags {
-        created_by = "${lookup(var.tags,"created_by")}"
-            // Takes the instance_name input variable and adds
-            //  the count.index to the name., e.g.
-            //  "example-host-web-1"
-            Name = "${var.instance_name}-${count.index}"
-    }
+
 }
 output "aws_ip" {
     value = "${aws_instance.projeto3.public_ip}"
