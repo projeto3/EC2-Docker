@@ -60,8 +60,8 @@ pipeline {
             steps {
                  sh 'sudo chmod +x teste.sh'
                  sh './teste.sh'
+                 echo 'Testing..'
              }
-             echo 'Testing..'
          }
         
          stage('Confirm Deploy Prod?') {
