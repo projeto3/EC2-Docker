@@ -3,8 +3,6 @@
 pipeline {
     agent any
     stages {
-       
-
                     stage('Codigo') {
                         steps {
                              parallel(
@@ -35,31 +33,26 @@ pipeline {
                 sh "sudo terraform init"
                 }
                 echo 'Configuring..'
-
             }
-
-
         }
+        
         stage('Criando Instancia') {
                         steps {
                     dir('terraform/') {
-                    sh "sudo terraform apply -auto-approve"
-                        //sh "pwd"
+                        sh "sudo terraform apply -auto-approve"
                         sh 'terraform output aws_dns > aws_dns.txt'
-                        sh 'cat aws_dns.txt'
                     }
-                    echo 'Criando Instancia..'
+                    echo 'Criando Instancia...'
             }
         
         }
+        
     stage('Deploy') {
 
             steps {
 
                 echo 'Deploying....'
-
             }
-
         }
         
          stage('Test') {
@@ -67,11 +60,10 @@ pipeline {
             steps {
                  sh 'sudo chmod +x teste.sh'
                  sh './teste.sh'
-                 echo 'Testing..'
-
              }
-
+             echo 'Testing..'
          }
+        
          stage('Confirm Deploy Prod?') {
 
             steps {
@@ -85,14 +77,14 @@ pipeline {
             }
 
         }
-             stage('Destroy') {
+        
+        stage('Destroy') {
 
             steps {
                 dir('terraform/') {
                 sh "sudo terraform destroy -force"
                 }
                 echo 'apagando repo....'
-
             }
 
         }
