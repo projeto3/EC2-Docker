@@ -22,19 +22,19 @@ try {
     $statement->bindParam(':lastName', $lastName);
     $statement->bindParam(':email', $email);
     // insert a row
-    $firstName = "Anderson";
-    $lastName = "Farias";
-    $email = "john@email.com";
+    $firstName = "Steve";
+    $lastName = "Jobs";
+    $email = "steve@email.com";
     $statement->execute();
     // insert another row
-    $firstName = "Mary";
-    $lastName = "Moe";
-    $email = "mary@email.com";
+    $firstName = "Bill";
+    $lastName = "Gates";
+    $email = "bill@email.com";
     $statement->execute();
     // insert another row
-    $firstName = "Julie";
-    $lastName = "Dooley";
-    $email = "julie@email.com";
+    $firstName = "Tony";
+    $lastName = "Stark";
+    $email = "stark@email.com";
     $statement->execute();
     echo '<pre>',
         json_encode(
