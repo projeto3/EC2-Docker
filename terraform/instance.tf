@@ -10,7 +10,7 @@ resource "aws_instance" "projeto3" {
   
   user_data = "${file("${path.module}/user_data.sh")}"
   tags = {
-      "Name" = "sh 'echo "BUILD_TAG" :: $BUILD_TAG'
+      "Name" = "${vars.BUILD_TAG}'
 "
     }
 }
