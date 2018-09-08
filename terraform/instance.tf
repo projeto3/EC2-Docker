@@ -18,3 +18,6 @@ output "aws_ip" {
 output "aws_dns" {
     value = "${aws_instance.projeto3.public_dns}"
 }
+  output "tags" {
+    value = "${lookup(var.tags, "No way this should happen")}"
+    }
