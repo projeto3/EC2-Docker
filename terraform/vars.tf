@@ -6,5 +6,5 @@
  default = "/etc/ssh/projeto.pub"
  }
  variable "BUILD_TAG" {
- default = "$BUILD_TAG"
+ name = "$BUILD_TAG"
  }
