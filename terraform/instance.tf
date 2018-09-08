@@ -10,7 +10,7 @@ resource "aws_instance" "projeto3" {
   
   user_data = "${file("${path.module}/user_data.sh")}"
     tags {
-        Name = "$BUILD_TAG"
+        Name = "{$BUILD_TAG}"
       }
 }
 output "aws_ip" {
