@@ -5,6 +5,3 @@
  variable "PATH_TO_PUBLIC_KEY" {
  default = "/etc/ssh/projeto.pub"
  }
- variable "BUILD_TAG" {
- name = "$BUILD_TAG"
- }
