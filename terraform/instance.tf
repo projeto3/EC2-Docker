@@ -9,7 +9,13 @@ resource "aws_instance" "projeto3" {
   #aws_security_group = "sg-0b70b9d3a1ae3add6"
   
   user_data = "${file("${path.module}/user_data.sh")}"
-
+  tags = "${merge(
+    local.common_tags,
+    map(
+      "Name", "OpenShift Master"
+    )
+  )}"
+}
 }
 output "aws_ip" {
     value = "${aws_instance.projeto3.public_ip}"
@@ -18,6 +24,3 @@ output "aws_ip" {
 output "aws_dns" {
     value = "${aws_instance.projeto3.public_dns}"
 }
-  output "tags" {
-    value = "${lookup(var.tags)}"
-    }
