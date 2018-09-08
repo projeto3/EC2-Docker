@@ -12,7 +12,7 @@ resource "aws_instance" "projeto3" {
   tags = "${merge(
     local.common_tags,
     map(
-      "Name", "${BUILD_TAG}"
+      "Name", "{BUILD_TAG}"
     )
   )}"
 }
