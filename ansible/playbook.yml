@@ -3,14 +3,14 @@
   gather_facts: false
   tasks:
      - name: "Instalando o Curl"
-       command: apt-get install curl -y
+       command: sudo yum install curl -y
 
      - name: "Instalando o docker"
-       shell: curl -sSl https://get.docker.com | sh
+       shell: sudo curl -sSl https://get.docker.com | sh
        ignore_errors: yes
-     - name: "Instalando o python"
-       command: apt-get install python -y
-       command: apt-get install python-pip -y
+    # - name: "Instalando o python"
+     #  command: apt-get install python -y
+      # command: apt-get install python-pip -y
 
      - name: "Instalando o docker-py"
        command: pip install docker-py
