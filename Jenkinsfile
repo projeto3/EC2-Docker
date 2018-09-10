@@ -50,7 +50,7 @@ pipeline {
     stage('Deploy') {
 
             steps {
-                ansible-playbook -i /terraform/aws_dns.txt -u ec2-user --private-key=/etc/ssh/projeto3.pem /~/projeto3/ansible/compose.yml
+                //ansible-playbook -i /terraform/aws_dns.txt -u ec2-user --private-key=/etc/ssh/projeto3.pem /~/projeto3/ansible/compose.yml
                 echo 'Deploying....'
             }
         }
