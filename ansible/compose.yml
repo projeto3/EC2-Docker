@@ -2,26 +2,26 @@
 - hosts: all
   gather_facts: false
   tasks:
-     - name: "Instalando o Curl"
-       command: sudo yum install curl -y
+     - name: "Fazendo download do docker"
+       shell: sudo wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-18.06.1.ce-3.el7.x86_64.rpm
 
      - name: "Instalando o docker"
-       shell: sudo curl -sSl https://get.docker.com | sh
+       shell: sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.42-1.gitad8f0f7.el7.noarch.rpm
+     - name: "Instalando"
+       shell: sudo yum install docker-ce-18.06.1.ce-3.el7.x86_64.rpm -y
        ignore_errors: yes
-    # - name: "Instalando o python"
-     #  command: apt-get install python -y
-      # command: apt-get install python-pip -y
 
      - name: "Instalando o docker-py"
-       command: pip install docker-py
-#    - name: "Instalando docker-compose"
-#      command: pip install docker-compose==1.9.0
+       command: sudo pip install docker-py
+
+     - name: "Startando o docker"
+       command: sudo systemctl start docker
 
      - name: "Subindo DB"
        docker_container:
         name: "mysql-local"
         image: ambientum/mysql:5.7
-#        pull: yes
+
         command: sleep infinity
         volumes:
           - ./mysql:/var/lib/mysql
@@ -37,7 +37,6 @@
        docker_container:
         name: "apache-local"
         image: ambientum/php:7.0-apache
- #       pull: yes
         command: sleep infinity
         volumes:
           - ./www/html:/var/www/app/public
@@ -45,3 +44,4 @@
           - "8080:8080"
         links:
           - "mysql-local"
+
