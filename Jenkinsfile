@@ -77,7 +77,7 @@ pipeline {
          }
              stage('Aplica em Produção') {
                      steps {
-                         if(${approvalMap} == '"Aplicar em Procução"') {
+                         when(${approvalMap} == 'Aplicar em Procução') {
                     echo 'I only execute on the Prod branch'
                }
                 
