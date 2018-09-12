@@ -65,7 +65,7 @@ pipeline {
         
          stage('Testes OK?') {
 
-            steps('Avaliação') {
+            steps {
                     script {
                         // capture the approval details in approvalMap.
                         approvalMap = input id: 'test', message: 'Aplicação Buildada com Sucesso', ok: 'Processar',
@@ -76,10 +76,8 @@ pipeline {
             }
          }
              stage('Aplica em Produção') {
-                 agent any
                      steps {
-                // print the details gathered from the approval
-                if (${approvalMap == 'Aplicar em Procução') {
+                         if (${approvalMap} == 'Aplicar em Procução') {
                     echo 'I only execute on the Prod branch'
                }
                 
