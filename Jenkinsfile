@@ -63,13 +63,13 @@ pipeline {
              }
          }
         
-         stage('Confirm Deploy Prod?') {
+         stage('Testes OK?') {
 
             steps {
                     script {
                         // capture the approval details in approvalMap.
-                        approvalMap = input id: 'test', message: 'Hello', ok: 'Proceed?',
-                        parameters: [choice(choices: 'Dev\nProd', description: 'Select Ambiente', name: 'Build'), string(defaultValue: '', description: '', name: 'Descrição')],  submitterParameter: 'APPROVER'
+                        approvalMap = input id: 'test', message: 'Aplicação Buildada com Sucesso', ok: 'Processar?',
+                        parameters: [choice(choices: 'Sim,Testes Realizados pode destruir\nAplicar em Procução', description: 'Select Ambiente', name: 'Build'), string(defaultValue: '', description: '', name: 'Descrição')],  submitterParameter: 'APPROVER'
                     
                 }
 
