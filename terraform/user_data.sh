@@ -12,3 +12,4 @@ chpasswd: { expire: False }
 ssh_pwauth: True
 PermitRootLogin yes
 RSAAuthentication yes
+reboot
