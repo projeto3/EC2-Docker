@@ -30,6 +30,8 @@ pipeline {
             steps {
                 dir('terraform/') {
                     sh 'cp /var/lib/jenkins/workspace/provider.tf .'
+                    sh 'cp /etc/ssh/projeto.pub .'
+
                 sh "sudo terraform init"
                 }
                 echo 'Configuring..'
