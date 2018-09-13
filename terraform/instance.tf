@@ -19,3 +19,6 @@ output "aws_ip" {
 output "aws_dns" {
     value = "${aws_instance.projeto3.public_dns}"
 }
+output "aws_public" {
+    value = "${aws_instance.projeto3.public_key}"
+}
