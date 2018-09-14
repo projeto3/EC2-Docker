@@ -2,7 +2,7 @@
 resource "aws_instance" "projeto3" {
   ami           = "ami-04681a1dbd79675a5"
   instance_type = "t2.micro"
-  key_name = "projeto3"
+  key_name = "${file(var.PATH_TO_PRIVATE_KEY)}"
   public_key = "${file(var.public_key_path)}"
   #key_name = "${aws_key_pair.mykeypair.key_name}"
   subnet_id     = "${aws_subnet.main-public-1.id}"
