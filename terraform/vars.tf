@@ -3,6 +3,6 @@ variable "key_path" {
   default = "~/.ssh/projeto3.pub"
 }
 variable "key_path_private" {
-  description = "SSH Public Key path"
+  description = "SSH private Key path"
   default = "~/.ssh/projeto3"
 }
