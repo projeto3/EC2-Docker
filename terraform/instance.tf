@@ -2,7 +2,7 @@
 resource "aws_instance" "projeto3" {
   ami           = "ami-04681a1dbd79675a5"
   instance_type = "t2.micro"
-  private_key = "${file("~/.ssh/authorized_keys")}"
+  private_key = "${file("${path.module}/projeto3.pem")}"
   key_name = "projeto3"
   #key_name = "${var.private_key_path)}"
   #key_name = "${aws_key_pair.mykeypair.key_name}"
