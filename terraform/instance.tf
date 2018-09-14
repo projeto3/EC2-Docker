@@ -4,7 +4,6 @@ resource "aws_instance" "projeto3" {
   instance_type = "t2.micro"
   key_name = "projeto3"
   #key_name = "${var.private_key_path)}"
-  public_key = "${var.public_key_path}"
   #key_name = "${aws_key_pair.mykeypair.key_name}"
   subnet_id     = "${aws_subnet.main-public-1.id}"
   vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
