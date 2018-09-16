@@ -18,13 +18,7 @@ Procedimeto para configuração do ambiente
 	Instale o terraform na maquina Jenkins - mais informações sobre a instalação (https://www.terraform.io/docs/index.html).
 	Instale o ansible na máquina Jenkins - mais informações sobre a instalação (https://www.ansible.com/).
 	Tenha uma conta na AWS - mais informações de como criar uma conta (https://aws.amazon.com/).
-	--Faça download deste projeto (git clone https://github.com/andersonfariiass/projeto_2.git)
-	--Dentro do diretório projeto_2/ crie a seguinte estrutura de diretórios:
-	--	- docker/
-	--	   - mysql/ - Diretório onde será armazenado a base de dados do mysql
-	--	   - www/html/ - Diretório onde será armazenado os arquivos da aplicação
-	--Dentro do diretório raiz (projeto_2/) execute o comando - vagrant up
-	--Para acessar a vm digite o comando: vagrant ssh
+	
 
 Executando os procedimentos acima,será criado uma instancia EC2 na AWS.
 
