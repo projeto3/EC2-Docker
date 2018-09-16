@@ -31,3 +31,13 @@ Para acessar a aplicação que foi utilizada para teste:
 		senha: docker
 		porta: 3306
 
+
+Integrantes:
+	Anderson dos Santos Farias
+	- Linkedin: https://www.linkedin.com/in/andersonfariass/
+	Elvis de Jesus Gois
+	Jodemi Cruz Santos
+	- Linkedin: https://www.linkedin.com/in/jodemi-cruz-santos-67b97431/
+	Matteus Silva Cruz
+	- Linkdin: https://www.linkedin.com/in/matteus-silva-cruz-466533114/
+	
