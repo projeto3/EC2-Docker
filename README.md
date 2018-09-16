@@ -14,7 +14,9 @@ Listagem de diretórios e arquivos:
 
 Procedimeto para configuração do ambiente
 	
-	Instale um servidor jenkins - mais informação sobre a instalação (https://jenkins.io/doc/).
+	Instale um servidor jenkins - mais informações sobre a instalação (https://jenkins.io/doc/).
+	Instale o terraform na maquina Jenkins - mais informações sobre a instalação (https://www.terraform.io/docs/index.html).
+	Instale o ansible na máquina Jenkins - mais informações sobre a instalação (https://www.ansible.com/).
 	Tenha uma conta na AWS - mais informações de como criar uma conta (https://aws.amazon.com/).
 	--Faça download deste projeto (git clone https://github.com/andersonfariiass/projeto_2.git)
 	--Dentro do diretório projeto_2/ crie a seguinte estrutura de diretórios:
