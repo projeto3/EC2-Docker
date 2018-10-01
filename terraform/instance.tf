@@ -13,7 +13,11 @@ resource "aws_instance" "projeto3" {
   
   user_data = "${file("${path.module}/user_data.sh")}"
 tags {
-        Name = "Pipeline_Projeto_Jenkins"
+        Name = "DEV Teste Infraesturura Agil"
+        Projeto = "Infraestrutura como codigo"
+        Curso = "Redes de Computadores"
+        Materia = "Projeto Integrador 3"
+        Gerente_do_Projeto = "Professor Pablo Menezes"
     }
 }
 output "aws_ip" {
