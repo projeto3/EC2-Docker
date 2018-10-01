@@ -41,6 +41,10 @@ resource "aws_security_group" "allow-ssh" {
   }
   
 tags {
-    Name = "allow-ssh"
-  }
+        Name = "DEV Teste Infraesturura Agil"
+        Projeto = "Infraestrutura como codigo"
+        Curso = "Redes de Computadores"
+        Materia = "Projeto Integrador 3"
+        Gerente_do_Projeto = "Professor Pablo Menezes"
+    }
 }
