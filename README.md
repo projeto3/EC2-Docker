@@ -38,7 +38,4 @@ Para acessar a aplicação que foi utilizada para teste:
 	- Linkedin: https://www.linkedin.com/in/andersonfariass/
 	Elvis de Jesus Gois
 	Jodemi Cruz Santos
-	- Linkedin: https://www.linkedin.com/in/jodemi-cruz-santos-67b97431/
-	Matteus Silva Cruz
-	- Linkdin: https://www.linkedin.com/in/matteus-silva-cruz-466533114/
-	
+	- Linkedin: https://www.linkedin.com/in/jodemi-cruz-santos-67b97431/	
