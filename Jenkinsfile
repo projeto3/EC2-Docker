@@ -16,7 +16,7 @@ pipeline {
                                     },
                                     
                                     Copiando_git:{
-                       // sh "sudo terraform apply -auto-approve"
+                                     // sh "sudo terraform apply -auto-approve"
                                      git url: 'https://github.com/projeto3/EC2-Docker.git'
 
                                             }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 dir('terraform/') {
                     sh 'cp /var/lib/jenkins/workspace/provider.tf .'
-                    sh "terraform init"
+                    sh "sudo terraform init"
                 }
                 echo 'Configuring..'
             }
