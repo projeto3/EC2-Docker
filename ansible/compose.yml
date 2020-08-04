@@ -35,7 +35,7 @@
        copy: src=../docker/docker-compose.yml dest=/tmp/docker-compose.yml
        
      - name: "Deploy APP"
-       shell: sudo docker-compose -f /tmp/docker/docker-compose.yml up -d
+       shell: sudo docker-compose -f /tmp/docker-compose.yml up -d
 
     # - name: "Subindo DB"
      #  docker_container:
