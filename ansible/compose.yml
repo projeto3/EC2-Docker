@@ -31,7 +31,7 @@
      - name: "Instalando docker-compose"
        shell: sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
    
-     - name: copy docker-compose
+     - name: "copy docker-compose"
        copy: src=../docker/docker-compose.yml dest=/tmp/docker-compose.yml
        
      - name: "Deploy APP"
