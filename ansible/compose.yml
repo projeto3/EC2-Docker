@@ -1,6 +1,8 @@
 ---
 - hosts: all
   gather_facts: false
+  vars:
+         ansible_python_interpreter: "/usr/bin/python3"
   tasks:
      #- name: "Fazendo download do docker"
       # shell: sudo wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-18.06.1.ce-3.el7.x86_64.rpm
