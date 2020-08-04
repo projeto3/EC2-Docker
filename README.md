@@ -17,6 +17,8 @@ Procedimeto para configuração do ambiente
 	Instale um servidor jenkins - mais informações sobre a instalação (https://jenkins.io/doc/).
 	Instale o terraform na maquina Jenkins - mais informações sobre a instalação (https://www.terraform.io/docs/index.html).
 	Instale o ansible na máquina Jenkins - mais informações sobre a instalação (https://www.ansible.com/).
+	Instale o gti na máquina Jenkins - mais informações sobre instalação (https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git).
+	Instale o java na máquina Jenkins - mais informações sobre a instalação (https://www.jenkins.io/doc/book/installing/#debianubuntu)
 	Tenha uma conta na AWS - mais informações de como criar uma conta (https://aws.amazon.com/).
 	
 
