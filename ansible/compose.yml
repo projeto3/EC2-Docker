@@ -23,9 +23,13 @@
        command: sudo systemctl start docker
      
      - name: "Instalando docker-compose"
-       command: sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+       command: sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
+
      - name: "Instalando docker-compose"
        command: sudo chmod +x /usr/local/bin/docker-compose
+       
+     - name: "Instalando docker-compose"
+       command: sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
        
      - name: "Deploy APP"
        command: sudo docker-compose -f ../docker/docker-compose.yml up -d
