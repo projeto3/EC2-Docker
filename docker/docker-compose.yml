@@ -2,33 +2,61 @@
 #   Docker compose para subir ambiente php+apache+mysql #
 #   imagens usadas: ambientum                           #
 #########################################################
-
-version: '3'
-
+version: "3"
 services:
 
-  apache-local:
-    image: ambientum/php:7.0-apache
-    container_name: apache-local 
-    volumes:
-      - ./www/html:/var/www/app/public
-
+  redis:
+    image: redis
     ports:
-      - "8080:8080"
-    links:
-      - mysql-local #link do apache-php com o mysql
+      - "6379"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    depends_on:
+      - redis
+    deploy:
+      mode: replicated
+      replicas: 2
+      placement:
+        constraints: [node.role == manager]
+      resources:
+        limits:
+          memory: 512M
+      restart_policy:
+        condition: on-failure
+        delay: 10s
 
-  mysql-local:
-    image: ambientum/mysql:5.7
-    container_name: mysql-local
-    volumes:
-      - ./mysql:/var/lib/mysql
+
+#version: '3'
+
+#services:
+
+ # apache-local:
+  #  image: ambientum/php:7.0-apache
+   # container_name: apache-local 
+   # volumes:
+   #   - ./www/html:/var/www/app/public
+
+    #ports:
+    #  - "8080:8080"
+    #links:
+     # - mysql-local #link do apache-php com o mysql
+
+  #mysql-local:
+  #  image: ambientum/mysql:5.7
+  #  container_name: mysql-local
+  #  volumes:
+   #   - ./mysql:/var/lib/mysql
  
-    ports:
-      - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=projeto_docker
-      - MYSQL_USER=docker
-      - MYSQL_PASSWORD=docker
-    user: "1000:50"  
+    #ports:
+    #  - "3306:3306"
+    #environment:
+    #  - MYSQL_ROOT_PASSWORD=root
+    #  - MYSQL_DATABASE=projeto_docker
+    #  - MYSQL_USER=docker
+    #  - MYSQL_PASSWORD=docker
+    #user: "1000:50"  
