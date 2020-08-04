@@ -13,7 +13,6 @@ tags = {
         Projeto = "Infraestrutura como codigo"
         Curso = "Redes de Computadores"
         Materia = "Projeto Integrador 3"
-        Gerente_do_Projeto = "Professor Pablo Menezes"
     }
 }
 output "aws_ip" {
