@@ -14,8 +14,8 @@
        #ignore_errors: yes
        become: yes
 
-     #- name: "Instalando o docker-py"
-       #command: sudo pip install docker-py
+     - name: "Instalando o docker-py"
+       command: sudo pip install docker-py
 
      - name: "Startando o docker"
        command: sudo systemctl start docker
