@@ -3,7 +3,7 @@
 aws_dns=$(cat terraform/aws_dns.txt)
 echo "$aws"
 
-SERVICE_PORT=8080
+SERVICE_PORT=80
 
 echo "Realizando teste de conectividade..."
 ping -qc5 $aws_dns
