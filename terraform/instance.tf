@@ -7,7 +7,7 @@ resource "aws_instance" "projeto3" {
   vpc_security_group_ids = [aws_security_group.allow-ssh.id]
   associate_public_ip_address	= "true"
   
-  user_data = "${file ("user_data.sh")}"
+  user_data = "${file("user_data.sh")}"
 tags = {
         Name = "DEV Teste Infraesturura Agil"
         Projeto = "Infraestrutura como codigo"
