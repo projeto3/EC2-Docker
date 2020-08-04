@@ -26,6 +26,8 @@
        docker_container:
         name: "mysql-local"
         image: ambientum/mysql:5.7
+        pull: yes
+        state: started
 
         command: sleep infinity
         volumes:
@@ -42,6 +44,10 @@
        docker_container:
         name: "apache-local"
         image: ambientum/php:7.0-apache
+        pull: yes
+        state: started
+        published_ports: 
+          - 8080:8080
         command: sleep infinity
         volumes:
           - ./www/html:/var/www/app/public
